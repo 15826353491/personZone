@@ -32,23 +32,11 @@
 #### 项目样图
 
 ![1](https://github.com/15826353491/personZone/blob/main/examplePic/1.png)
-![20201223145731](D:\Desktop\20201223145731.png)
-
-![2](D:\Desktop\2.png)
-
-![3](D:\Desktop\3.png)
-
-![4](D:\Desktop\4.png)
-
-![5](D:\Desktop\5.png)
-
-![6](D:\Desktop\6.png)
-
-![7](D:\Desktop\7.png)
-
-![8](D:\Desktop\8.png)
-
-
+![2](https://github.com/15826353491/personZone/blob/main/examplePic/2.png)
+![3](https://github.com/15826353491/personZone/blob/main/examplePic/3.png)
+![4](https://github.com/15826353491/personZone/blob/main/examplePic/4.png)
+![5](https://github.com/15826353491/personZone/blob/main/examplePic/5.png)
+![6](https://github.com/15826353491/personZone/blob/main/examplePic/6.png)
 
 
 
