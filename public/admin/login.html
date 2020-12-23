@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Sign in &laquo; Admin</title>
+  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+  <div class="login">
+    <div class="login-wrap">
+      <img class="avatar" src="../assets/img/default.png">
+      <!-- 有错误信息时展示 -->
+      <div class="alert alert-danger" style="display:none">
+        <strong>错误！</strong> 用户名或密码错误！
+      </div>
+      <div class="form-group">
+        <label for="email" class="sr-only">邮箱</label>
+        <input id="email" type="email" class="form-control" placeholder="邮箱" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="password" class="sr-only">密码</label>
+        <input id="password" type="password" class="form-control" placeholder="密码">
+      </div>
+      <button id="loginBtn" class="btn btn-primary btn-block">登 录</button>
+    </div>
+  </div>
+  
+  <script src="../assets/vendors/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+
+	var timer=null
+
+	$('#email').on('input',function(){
+		clearTimeout(timer)
+		// 获取邮箱
+		var email = $('#email').val()
+		
+		timer=setTimeout(function(){
+			// 向服务器发送请求 判断邮箱是否存在
+			$.ajax({
+				type:'get',
+				url:'/login',
+				data:{email},
+				success:response=>{
+					//登录成功显示头像
+					$('.avatar').prop('src',response.avatar)				
+				},
+				error:err=>{
+					$('.avatar').prop('src','../assets/img/default.png')
+				}
+			})
+		},800)
+	})
+
+	$(document).on('keyup',function(e){
+		e.keyCode==13 && $('#loginBtn').click()
+	})
+
+
+  	$('#loginBtn').on('click',function(){
+		// 获取邮箱 密码 
+		var email = $('#email').val()
+		var password = $('#password').val()
+		
+		// 判断邮箱密码是否为空
+		if(email.trim().length == 0 || password.trim().length == 0){
+			//alert('邮箱或密码为必填项')
+			$('.alert-danger').html('<strong>错误！</strong> 邮箱或密码为必填项！').show()
+			return false
+		}
+		
+		// 向服务器发送请求 判断邮箱密码是否存在
+		$.ajax({
+			type:'post',
+			url:'/login',
+			data:{email,password},
+			success:response=>{
+				//登录成功跳转到主页面
+				if(response.role=='admin'){
+					location.href = 'index.html'
+				}else{
+					location.href = '/index.html'
+				}
+			},
+			error:err=>{ $('.alert-danger').html('<strong>错误！</strong> 邮箱或密码错误！').show() }
+		})
+		
+		
+		
+		
+	})
+  </script>
+  
+</body>
+</html>
