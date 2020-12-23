@@ -31,8 +31,7 @@
 
 #### 项目样图
 
-![1](D:\Desktop\1.png)
-
+![1](D:\Desktop\1.png)https://github.com/15826353491/personZone/blob/main/public/uploads/upload_74b7cab02ce728106c55fbbf2f0ea0d8.jpg
 ![20201223145731](D:\Desktop\20201223145731.png)
 
 ![2](D:\Desktop\2.png)
