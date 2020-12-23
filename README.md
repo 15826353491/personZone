@@ -31,7 +31,7 @@
 
 #### 项目样图
 
-![1](https://images2018.cnblogs.com/blog/978388/201805/978388-20180511085830837-1284186165.png)
+![1](https://github.com/15826353491/personZone/examplePic/20201223145731.png)
 ![20201223145731](D:\Desktop\20201223145731.png)
 
 ![2](D:\Desktop\2.png)
